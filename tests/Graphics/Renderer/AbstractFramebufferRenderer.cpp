@@ -35,7 +35,7 @@ using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;
 using namespace Rpi4StatusDisplay::Graphics::Renderer;
 
-#define EMPTY_OVERRIDED_CLASS_METHOD(METHOD_NAME, ...) \
+#define EMPTY_OVERRIDDEN_CLASS_METHOD(METHOD_NAME, ...) \
     void METHOD_NAME(__VA_ARGS__) override { \
     }
 
@@ -45,13 +45,13 @@ public:
         // do nothing
     }
 
-    EMPTY_OVERRIDED_CLASS_METHOD(setColor, Color &c);
-    EMPTY_OVERRIDED_CLASS_METHOD(flush);
-    EMPTY_OVERRIDED_CLASS_METHOD(clear);
-    EMPTY_OVERRIDED_CLASS_METHOD(text, std::string &text);
-    EMPTY_OVERRIDED_CLASS_METHOD(line, Point2D &p1, Point2D &p2);
-    EMPTY_OVERRIDED_CLASS_METHOD(rectOutline, Rect2D &r);
-    EMPTY_OVERRIDED_CLASS_METHOD(rectFilled, Rect2D &r);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(setColor, Color &c);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(flush);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(clear);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(text, std::string &text);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(line, Point2D &p1, Point2D &p2);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(rectOutline, Rect2D &r);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(rectFilled, Rect2D &r);
 };
 
 TEST_CASE("Graphics::Renderer::AbstractFramebufferRenderer", "[Graphics][Renderer][AbstractFramebufferRenderer]") {
