@@ -120,47 +120,60 @@ namespace Rpi4StatusDisplay {
                 SDL_FreeSurface(this->_sdl_surface);
             };
 
-            void SdlRenderer::setColor(Color &color) {
+            SdlRenderer &SdlRenderer::setColor(Color &color) {
                 SDL_SetRenderDrawColor(
                         this->_sdl_renderer,
                         color.red(), color.green(), color.blue(), color.alpha());
+
+                return *this;
             }
 
-            void SdlRenderer::clear() {
+            SdlRenderer &SdlRenderer::clear() {
                 SDL_RenderClear(this->_sdl_renderer);
+
+                return *this;
             }
 
-            void SdlRenderer::flush() {
+            SdlRenderer &SdlRenderer::flush() {
                 SDL_RenderPresent(this->_sdl_renderer);
+
+                return *this;
             }
 
-            void SdlRenderer::line(Point2D &p1, Point2D &p2) {
+            SdlRenderer &SdlRenderer::line(Point2D &p1, Point2D &p2) {
                 SDL_RenderDrawLine(
                         this->_sdl_renderer,
-                        p1.x(), p1.y(),
-                        p2.x(), p2.y());
+                        p1.left(), p1.top(),
+                        p2.left(), p2.top());
+
+                return *this;
             }
 
-            void SdlRenderer::rectOutline(Rect2D &r) {
+            SdlRenderer &SdlRenderer::rectOutline(Rect2D &r) {
                 SDL_Rect sdl_rect = {
                         r.left(), r.top(),
                         r.width(), r.height()
                 };
 
                 SDL_RenderDrawRect(this->_sdl_renderer, &sdl_rect);
+
+                return *this;
             }
 
-            void SdlRenderer::rectFilled(Rect2D &r) {
+            SdlRenderer &SdlRenderer::rectFilled(Rect2D &r) {
                 SDL_Rect sdl_rect = {
                         r.left(), r.top(),
                         r.width(), r.height()
                 };
 
                 SDL_RenderFillRect(this->_sdl_renderer, &sdl_rect);
+
+                return *this;
             }
 
-            void SdlRenderer::text(std::string &text) {
+            SdlRenderer &SdlRenderer::text(Point2D &p, std::string &text) {
                 // todo
+                return *this;
             }
         }
     }

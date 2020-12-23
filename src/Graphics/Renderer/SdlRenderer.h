@@ -44,13 +44,13 @@ namespace Rpi4StatusDisplay {
 
                 explicit SdlRenderer(Framebuffer &framebuffer);
                 ~SdlRenderer();
-                void setColor(Color &color) override;
-                void clear() override;
-                void flush() override;
-                void line(Point2D &p1, Point2D &p2) override;
-                void rectOutline(Rect2D &r) override;
-                void rectFilled(Rect2D &r) override;
-                void text(std::string &text) override;
+                SdlRenderer &setColor(Color &color) override;
+                SdlRenderer &clear() override;
+                SdlRenderer &flush() override;
+                SdlRenderer &line(Point2D &p1, Point2D &p2) override;
+                SdlRenderer &rectOutline(Rect2D &r) override;
+                SdlRenderer &rectFilled(Rect2D &r) override;
+                SdlRenderer &text(Point2D &p, std::string &text) override;
             };
         }
     }
