@@ -67,6 +67,16 @@ TEST_CASE("Graphics::Rect2D", "[Graphics][Rect2D]") {
         REQUIRE(r1_0.bottom() == 20 + 40);
     }
 
+    SECTION("Rect2D(10, 20, 30, 40)") {
+        Rect2D rect(10, 20, 30, 40);
+        REQUIRE(r1_0.left() == 10);
+        REQUIRE(r1_0.top() == 20);
+        REQUIRE(r1_0.width() == 30);
+        REQUIRE(r1_0.height() == 40);
+        REQUIRE(r1_0.right() == 10 + 30);
+        REQUIRE(r1_0.bottom() == 20 + 40);
+    }
+
     SECTION("Rect2D(0, 0, 0, 0).setLeft(10)") {
         Point2D p0(0, 0);
         Size2D s0(0, 0);

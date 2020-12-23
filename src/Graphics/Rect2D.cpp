@@ -20,6 +20,7 @@
  */
 
 #include <iostream>
+#include <memory>
 
 #include "Point2D.h"
 #include "Size2D.h"
@@ -29,6 +30,11 @@
 namespace Rpi4StatusDisplay {
     namespace Graphics {
         Rect2D::Rect2D(Point2D &point, Size2D &size) : _point(point), _size(size) {
+        }
+
+        Rect2D::Rect2D(int left, int top, int width, int height) : Rect2D(
+                *std::make_shared<Point2D>(left, top),
+                *std::make_shared<Size2D>(width, height)) {
         }
 
         Point2D &Rect2D::point() const {

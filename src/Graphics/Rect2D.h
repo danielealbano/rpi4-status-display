@@ -31,6 +31,7 @@ namespace Rpi4StatusDisplay {
 
         public:
             Rect2D(Point2D &point, Size2D &size);
+            Rect2D(int left, int top, int width, int height);
             Point2D &point() const;
             void setPoint(Point2D &point);
             Size2D &size() const;
