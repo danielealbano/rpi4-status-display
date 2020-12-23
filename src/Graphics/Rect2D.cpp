@@ -28,80 +28,70 @@
 
 namespace Rpi4StatusDisplay {
     namespace Graphics {
-        Rect2D::Rect2D(int left, int top, int width, int height) {
-            this->setLeft(left);
-            this->setTop(top);
-            this->setWidth(width);
-            this->setHeight(height);
+        Rect2D::Rect2D(Point2D &point, Size2D &size) : _point(point), _size(size) {
         }
 
-        Rect2D::Rect2D(Point2D p, Size2D s) : Rect2D(p.x(), p.y(), s.width(), s.height()) {
-            // do nothing
+        Point2D &Rect2D::point() const {
+            return this->_point;
+        }
+
+        void Rect2D::setPoint(Point2D &point) {
+            this->_point = point;
+        }
+
+        Size2D &Rect2D::size() const {
+            return this->_size;
+        }
+
+        void Rect2D::setSize(Size2D &size) {
+            this->_size = size;
         }
 
         int Rect2D::left() const {
-            return this->_left;
-        }
-
-        void Rect2D::setLeft(int left) {
-            this->_left = left;
+            return this->point().left();
         }
 
         int Rect2D::top() const {
-            return this->_top;
-        }
-
-        void Rect2D::setTop(int top) {
-            this->_top = top;
+            return this->point().top();
         }
 
         int Rect2D::width() const {
-            return this->_width;
-        }
-
-        void Rect2D::setWidth(int width) {
-            this->_width = width;
+            return this->size().width();
         }
 
         int Rect2D::height() const {
-            return this->_height;
-        }
-
-        void Rect2D::setHeight(int height) {
-            this->_height = height;
+            return this->size().height();
         }
 
         int Rect2D::right() const {
-            return this->_left + this->_width;
+            return this->point().left() + this->size().width();
         }
 
         int Rect2D::bottom() const {
-            return this->_top + this->_height;
+            return this->point().top() + this->size().height();
         }
 
-        bool Rect2D::contains(Point2D p) const {
+        bool Rect2D::contains(Point2D &point) const {
             return
-                p.x() >= this->left() && p.x() <= this->right() &&
-                p.y() >= this->top() && p.y() <= this->bottom();
+                    point.left() >= this->left() && point.left() <= this->right() &&
+                    point.top() >= this->top() && point.top() <= this->bottom();
         }
 
-        bool operator == (const Rect2D &r1, const Rect2D &r2) {
+        bool operator == (const Rect2D &rect1, const Rect2D &rect2) {
             return
-                r1.left() == r2.left() &&
-                r1.top() == r2.top() &&
-                r1.width() == r2.width() &&
-                r1.height() == r2.height();
+                    rect1.point() == rect2.point() &&
+                    rect1.size() == rect2.size();
         }
 
-        bool operator != (const Rect2D &r1, const Rect2D &r2) {
-            return !(r1 == r2);
+        bool operator != (const Rect2D &rect1, const Rect2D &rect2) {
+            return !(rect1 == rect2);
         }
 
-        std::ostream & operator << (std::ostream & output, const Rect2D &p) {
+        std::ostream & operator << (std::ostream & output, const Rect2D &rect) {
             output <<
                    "(" <<
-                   "left = " << p.left() << ", top = " << p.top() <<
-                   ", width = " << p.width() << ", height = " << p.height() <<
+                   "left = " << rect.left() << ", top = " << rect.top() <<
+                   ", width = " << rect.width() << ", height = " << rect.height() <<
                    ")";
             return output;
         }

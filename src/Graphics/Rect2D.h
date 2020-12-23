@@ -26,29 +26,26 @@ namespace Rpi4StatusDisplay {
     namespace Graphics {
         class Rect2D {
         protected:
-            int _top;
-            int _left;
-            int _width;
-            int _height;
+            Point2D &_point;
+            Size2D &_size;
 
         public:
-            Rect2D(int x, int y, int width, int height);
-            Rect2D(Point2D p, Size2D s);
+            Rect2D(Point2D &point, Size2D &size);
+            Point2D &point() const;
+            void setPoint(Point2D &point);
+            Size2D &size() const;
+            void setSize(Size2D &size);
             int left() const;
-            void setLeft(int left);
             int top() const;
-            void setTop(int top);
             int width() const;
-            void setWidth(int width);
             int height() const;
-            void setHeight(int height);
             int right() const;
             int bottom() const;
-            bool contains(Point2D p) const;
+            bool contains(Point2D &point) const;
 
-            friend bool operator == (const Rect2D &p1, const Rect2D &p2);
-            friend bool operator != (const Rect2D &p1, const Rect2D &p2);
-            friend std::ostream & operator << (std::ostream &output, const Rect2D &p);
+            friend bool operator == (const Rect2D &rect1, const Rect2D &rect2);
+            friend bool operator != (const Rect2D &rect1, const Rect2D &rect2);
+            friend std::ostream & operator << (std::ostream &output, const Rect2D &rect);
         };
     }
 }

@@ -31,10 +31,17 @@ using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;
 
 TEST_CASE("Graphics::Rect2D", "[Graphics][Rect2D]") {
-    Rect2D r0_0(0, 0, 0, 0);
-    Rect2D r1_0(10, 20, 30, 40);
-    Rect2D r1_1(10, 20, 30, 40);
-    Rect2D r2_0(40, 30, 20, 10);
+    Point2D p0_r0(0, 0);
+    Size2D s0_r0(0, 0);
+    Point2D p1_r1(10, 20);
+    Size2D s1_r1(30, 40);
+    Point2D p2_r2(40, 30);
+    Size2D s2_r2(20, 10);
+
+    Rect2D r0_0(p0_r0, s0_r0);
+    Rect2D r1_0(p1_r1, s1_r1);
+    Rect2D r1_1(p1_r1, s1_r1);
+    Rect2D r2_0(p2_r2, s2_r2);
 
     Point2D p_in(r1_0.left() + 1, r1_0.top() + 1);
     Point2D p_out_top_left_corner(r1_0.left() - 1, r1_0.top() - 1);
@@ -56,38 +63,32 @@ TEST_CASE("Graphics::Rect2D", "[Graphics][Rect2D]") {
         REQUIRE(r1_0.top() == 20);
         REQUIRE(r1_0.width() == 30);
         REQUIRE(r1_0.height() == 40);
-        REQUIRE(r1_0.right() == 40);
-        REQUIRE(r1_0.bottom() == 60);
+        REQUIRE(r1_0.right() == 10 + 30);
+        REQUIRE(r1_0.bottom() == 20 + 40);
     }
 
     SECTION("Rect2D(0, 0, 0, 0).setLeft(10)") {
-        Rect2D r(0, 0, 0, 0);
-        r.setLeft(10);
+        Point2D p0(0, 0);
+        Size2D s0(0, 0);
+        Point2D p1(10, 20);
+        Rect2D r(p0, s0);
+        r.setPoint(p1);
 
         REQUIRE(r.left() == 10);
         REQUIRE(r.right() == 10);
-    }
-
-    SECTION("Rect2D(0, 0, 0, 0).setTop(10)") {
-        Rect2D r(0, 0, 0, 0);
-        r.setTop(20);
-
         REQUIRE(r.top() == 20);
         REQUIRE(r.bottom() == 20);
     }
 
     SECTION("Rect2D(0, 0, 0, 0).setWidth(10)") {
-        Rect2D r(0, 0, 0, 0);
-        r.setWidth(30);
+        Point2D p0(0, 0);
+        Size2D s0(0, 0);
+        Size2D s1(30, 40);
+        Rect2D r(p0, s0);
+        r.setSize(s1);
 
         REQUIRE(r.left() == 0);
         REQUIRE(r.right() == 30);
-    }
-
-    SECTION("Rect2D(0, 0, 0, 0).setHeight(10)") {
-        Rect2D r(0, 0, 0, 0);
-        r.setHeight(40);
-
         REQUIRE(r.top() == 0);
         REQUIRE(r.bottom() == 40);
     }
