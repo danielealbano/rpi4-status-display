@@ -27,13 +27,13 @@ namespace Rpi4StatusDisplay {
         namespace Renderer {
             class RendererInterface {
             public:
-                virtual void setColor(Color &color) = 0;
-                virtual void flush() = 0;
-                virtual void clear() = 0;
-                virtual void line(Point2D &p1, Point2D &p2) = 0;
-                virtual void rectOutline(Rect2D &r) = 0;
-                virtual void rectFilled(Rect2D &r) = 0;
-                virtual void text(std::string &text) = 0;
+                virtual RendererInterface &setColor(Color &color) = 0;
+                virtual RendererInterface &flush() = 0;
+                virtual RendererInterface &clear() = 0;
+                virtual RendererInterface &line(Point2D &p1, Point2D &p2) = 0;
+                virtual RendererInterface &rectOutline(Rect2D &r) = 0;
+                virtual RendererInterface &rectFilled(Rect2D &r) = 0;
+                virtual RendererInterface &text(Point2D &p, std::string &text) = 0;
             };
         }
     }
