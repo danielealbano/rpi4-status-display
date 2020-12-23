@@ -41,7 +41,7 @@ namespace Rpi4StatusDisplay {
              */
             SdlRenderer::sdlRendererInitConstructor SdlRenderer::sdlRendererInitConstructorInstance;
             SdlRenderer::sdlRendererInitConstructor::sdlRendererInitConstructor() {
-                if (SDL_Init(SDL_INIT_VIDEO ) != 0) {
+                if (SDL_Init(SDL_INIT_VIDEO) != 0) {
                     std::string errorStr(SDL_GetError());
                     SDL_Log("Unable to initialize SDL: %s", errorStr.c_str());
 
@@ -54,6 +54,9 @@ namespace Rpi4StatusDisplay {
 
             SdlRenderer::SdlRenderer(Framebuffer &framebuffer) : AbstractFramebufferRenderer(framebuffer) {
                 int pixelFormat;
+
+                // TODO: review constructor, Valgrind reports "Uninitialised value was created by a stack
+                //       allocation", need to investigate the source of the warning
 
                 // TODO: another hack, the palette, if required, should be passed down from the display through the
                 //       framebuffer as the colors in it will be indexed via the palette. Only black and white rendering
