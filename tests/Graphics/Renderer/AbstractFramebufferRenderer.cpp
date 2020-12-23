@@ -24,6 +24,7 @@
 #include "Graphics/Color.h"
 #include "Graphics/Point2D.h"
 #include "Graphics/Size2D.h"
+#include "Graphics/Line2D.h"
 #include "Graphics/Rect2D.h"
 #include "Graphics/Framebuffer.h"
 #include "Graphics/Renderer/RendererInterface.h"
@@ -50,7 +51,7 @@ public:
     EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, flush);
     EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, clear);
     EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, text, Point2D &p, std::string &text);
-    EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, line, Point2D &p1, Point2D &p2);
+    EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, line, Line2D &l);
     EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, rectOutline, Rect2D &r);
     EMPTY_OVERRIDDEN_CLASS_METHOD(AbstractRendererTestWrapper, rectFilled, Rect2D &r);
 };

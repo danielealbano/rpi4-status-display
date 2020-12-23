@@ -30,7 +30,7 @@ namespace Rpi4StatusDisplay {
                 virtual RendererInterface &setColor(Color &color) = 0;
                 virtual RendererInterface &flush() = 0;
                 virtual RendererInterface &clear() = 0;
-                virtual RendererInterface &line(Point2D &p1, Point2D &p2) = 0;
+                virtual RendererInterface &line(Line2D &l) = 0;
                 virtual RendererInterface &rectOutline(Rect2D &r) = 0;
                 virtual RendererInterface &rectFilled(Rect2D &r) = 0;
                 virtual RendererInterface &text(Point2D &p, std::string &text) = 0;

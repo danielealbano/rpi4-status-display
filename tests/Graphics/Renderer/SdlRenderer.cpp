@@ -26,6 +26,7 @@
 #include "Graphics/Color.h"
 #include "Graphics/Point2D.h"
 #include "Graphics/Size2D.h"
+#include "Graphics/Line2D.h"
 #include "Graphics/Rect2D.h"
 #include "Graphics/Framebuffer.h"
 #include "Graphics/Renderer/RendererInterface.h"
@@ -81,6 +82,7 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
     Point2D p_10_0(10, 0);
     Point2D p_20_0(20, 0);
     Size2D s0(40, 40);
+    Line2D l_10_0_20_0(p_10_0, p_20_0);
 
     Point2D p0_r0(5, 7);
     Size2D s0_r0(28, 30);
@@ -114,7 +116,7 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
 
         sdlRenderer0.setColor(const_cast<Color &>(Color::White));
 
-        sdlRenderer0.line(p_10_0, p_20_0);
+        sdlRenderer0.line(l_10_0_20_0);
         sdlRenderer0.flush();
 
 
@@ -134,7 +136,7 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
 
         sdlRenderer0.setColor(const_cast<Color &>(Color::White));
 
-        sdlRenderer0.line(p_10_0, p_20_0);
+        sdlRenderer0.line(l_10_0_20_0);
         sdlRenderer0.flush();
 
         // No need to take into account the pitch in the test, the line is horizontal

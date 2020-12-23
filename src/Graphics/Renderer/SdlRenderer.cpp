@@ -26,6 +26,7 @@
 #include "Graphics/Color.h"
 #include "Graphics/Size2D.h"
 #include "Graphics/Point2D.h"
+#include "Graphics/Line2D.h"
 #include "Graphics/Rect2D.h"
 #include "Graphics/Framebuffer.h"
 #include "Graphics/Renderer/RendererInterface.h"
@@ -143,11 +144,11 @@ namespace Rpi4StatusDisplay {
                 return *this;
             }
 
-            SdlRenderer &SdlRenderer::line(Point2D &p1, Point2D &p2) {
+            SdlRenderer &SdlRenderer::line(Line2D &l) {
                 SDL_RenderDrawLine(
                         this->_sdl_renderer,
-                        p1.left(), p1.top(),
-                        p2.left(), p2.top());
+                        l.point1().left(), l.point1().top(),
+                        l.point2().left(), l.point2().top());
 
                 return *this;
             }
