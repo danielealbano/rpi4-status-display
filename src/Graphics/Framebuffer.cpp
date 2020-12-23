@@ -41,7 +41,7 @@ namespace Rpi4StatusDisplay {
         }
 
         Framebuffer::~Framebuffer() {
-            delete this->_data;
+            delete[] this->_data;
             this->_data = nullptr;
         }
 
