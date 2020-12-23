@@ -81,8 +81,14 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
     Point2D p_10_0(10, 0);
     Point2D p_20_0(20, 0);
     Size2D s0(40, 40);
-    Rect2D r0(5, 7, 28, 30);
-    Rect2D r1(7, 9, 24, 26);
+
+    Point2D p0_r0(5, 7);
+    Size2D s0_r0(28, 30);
+    Rect2D r0(p0_r0, s0_r0);
+
+    Point2D p0_r1(7, 9);
+    Size2D s0_r1(24, 26);
+    Rect2D r1(p0_r1, s0_r1);
 
     int depth0 = 8;
     int depthBytes0 = depth0 / 8;
@@ -113,7 +119,7 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
 
 
         // No need to take into account the pitch in the test, the line is horizontal
-        for (int i = p_10_0.x() * depthBytes0; i < p_20_0.x() * depthBytes0; i++) {
+        for (int i = p_10_0.left() * depthBytes0; i < p_20_0.left() * depthBytes0; i++) {
             REQUIRE(data[i] == colorsWhiteIndex);
         }
     }
@@ -132,7 +138,7 @@ TEST_CASE("Graphics::Renderer::SdlRenderer", "[Graphics][Renderer][SdlRenderer]"
         sdlRenderer0.flush();
 
         // No need to take into account the pitch in the test, the line is horizontal
-        for (int i = p_10_0.x() * depthBytes1; i < p_20_0.x() * depthBytes1; i++) {
+        for (int i = p_10_0.left() * depthBytes1; i < p_20_0.left() * depthBytes1; i++) {
             REQUIRE(data[i] == colorsWhiteRGBA);
         }
     }
