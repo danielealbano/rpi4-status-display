@@ -44,14 +44,14 @@ TEST_CASE("Graphics::Size2D", "[Graphics][Size2D]") {
         REQUIRE(s1_0.height() == 20);
     }
 
-    SECTION("Size2D(0, 0).setX(10)") {
+    SECTION("Size2D(0, 0).setWidth(10)") {
         Size2D p(0, 0);
         p.setWidth(10);
 
         REQUIRE(p.width() == 10);
     }
 
-    SECTION("Size2D(0, 0).setY(10)") {
+    SECTION("Size2D(0, 0).setHeight(10)") {
         Size2D p(0, 0);
         p.setHeight(20);
 
