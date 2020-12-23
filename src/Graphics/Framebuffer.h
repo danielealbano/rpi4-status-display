@@ -22,6 +22,9 @@
 #ifndef RPI4_STATUS_DISPLAY_GRAPHICS_FRAMEBUFFER_H
 #define RPI4_STATUS_DISPLAY_GRAPHICS_FRAMEBUFFER_H
 
+// TODO: the framebuffer should be refactored to implement a set of different classes per Depth and to properly
+//       support a palette in case of indexed colors
+
 namespace Rpi4StatusDisplay {
     namespace Graphics {
         class Framebuffer {
