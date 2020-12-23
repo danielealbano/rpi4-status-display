@@ -25,39 +25,39 @@
 
 namespace Rpi4StatusDisplay {
     namespace Graphics {
-        Point2D::Point2D(int x, int y) {
-            this->setX(x);
-            this->setY(y);
+        Point2D::Point2D(int left, int top) {
+            this->setLeft(left);
+            this->setTop(top);
         }
 
-        int Point2D::x() const  {
-            return this->_x;
+        int Point2D::left() const  {
+            return this->_left;
         }
 
-        void Point2D::setX(int x) {
-            this->_x = x;
+        void Point2D::setLeft(int left) {
+            this->_left = left;
         }
 
-        int Point2D::y() const {
-            return this->_y;
+        int Point2D::top() const {
+            return this->_top;
         }
 
-        void Point2D::setY(int y) {
-            this->_y = y;
+        void Point2D::setTop(int top) {
+            this->_top = top;
         }
 
-        bool operator == (const Point2D &p1, const Point2D &p2) {
-            return p1.x() == p2.x() && p1.y() == p2.y();
+        bool operator == (const Point2D &point1, const Point2D &point2) {
+            return point1.left() == point2.left() && point1.top() == point2.top();
         }
 
-        bool operator != (const Point2D &p1, const Point2D &p2) {
-            return !(p1 == p2);
+        bool operator != (const Point2D &point1, const Point2D &point2) {
+            return !(point1 == point2);
         }
 
-        std::ostream & operator << (std::ostream & output, const Point2D &p) {
+        std::ostream & operator << (std::ostream & output, const Point2D &point) {
             output <<
                    "(" <<
-                   "x = " << p.x() << ", y = " << p.y() <<
+                   "left = " << point.left() << ", top = " << point.top() <<
                    ")";
             return output;
         }

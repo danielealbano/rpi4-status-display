@@ -26,20 +26,20 @@ namespace Rpi4StatusDisplay {
     namespace Graphics {
         class Point2D {
         protected:
-            int _x;
-            int _y;
+            int _left;
+            int _top;
 
         public:
-            Point2D(int x, int y);
-            int x() const;
-            void setX(int x);
-            int y() const;
-            void setY(int x);
+            Point2D(int left, int top);
+            int left() const;
+            void setLeft(int left);
+            int top() const;
+            void setTop(int top);
 
-            friend std::ostream & operator << (std::ostream &output, const Point2D &p);
+            friend std::ostream & operator << (std::ostream &output, const Point2D &point);
 
-            friend bool operator == (const Point2D &p1, const Point2D &p2);
-            friend bool operator != (const Point2D &p1, const Point2D &p2);
+            friend bool operator == (const Point2D &point1, const Point2D &point2);
+            friend bool operator != (const Point2D &point1, const Point2D &point2);
         };
     }
 }

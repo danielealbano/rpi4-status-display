@@ -35,27 +35,27 @@ TEST_CASE("Graphics::Point2D", "[Graphics][Point2D]") {
     Point2D p2_0(40, 30);
 
     SECTION("Point2D(0, 0)") {
-        REQUIRE(p0_0.x() == 0);
-        REQUIRE(p0_0.y() == 0);
+        REQUIRE(p0_0.left() == 0);
+        REQUIRE(p0_0.top() == 0);
     }
 
     SECTION("Point2D(10, 20)") {
-        REQUIRE(p1_0.x() == 10);
-        REQUIRE(p1_0.y() == 20);
+        REQUIRE(p1_0.left() == 10);
+        REQUIRE(p1_0.top() == 20);
     }
 
-    SECTION("Point2D(0, 0).setX(10)") {
+    SECTION("Point2D(0, 0).setLeft(10)") {
         Point2D p(0, 0);
-        p.setX(10);
+        p.setLeft(10);
 
-        REQUIRE(p.x() == 10);
+        REQUIRE(p.left() == 10);
     }
 
-    SECTION("Point2D(0, 0).setY(10)") {
+    SECTION("Point2D(0, 0).setTop(10)") {
         Point2D p(0, 0);
-        p.setY(20);
+        p.setTop(20);
 
-        REQUIRE(p.y() == 20);
+        REQUIRE(p.top() == 20);
     }
 
     SECTION("Point2D(10, 20) == Point2D(10, 20) (true)") {
@@ -78,6 +78,6 @@ TEST_CASE("Graphics::Point2D", "[Graphics][Point2D]") {
         std::stringstream out;
         out << p1_0;
 
-        REQUIRE(out.str() == "(x = 10, y = 20)");
+        REQUIRE(out.str() == "(left = 10, top = 20)");
     }
 }
