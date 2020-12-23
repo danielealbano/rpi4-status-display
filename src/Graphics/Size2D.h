@@ -36,10 +36,10 @@ namespace Rpi4StatusDisplay {
             int height() const;
             void setHeight(int height);
 
-            friend std::ostream & operator << (std::ostream &output, const Size2D &p);
+            friend std::ostream & operator << (std::ostream &output, const Size2D &size);
 
-            friend bool operator == (const Size2D &p1, const Size2D &p2);
-            friend bool operator != (const Size2D &p1, const Size2D &p2);
+            friend bool operator == (const Size2D &size1, const Size2D &size2);
+            friend bool operator != (const Size2D &size1, const Size2D &size2);
         };
     }
 }

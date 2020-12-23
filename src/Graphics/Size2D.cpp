@@ -46,18 +46,18 @@ namespace Rpi4StatusDisplay {
             this->_height = height;
         }
 
-        bool operator == (const Size2D &s1, const Size2D &s2) {
-            return s1.width() == s2.width() && s1.height() == s2.height();
+        bool operator == (const Size2D &size1, const Size2D &size2) {
+            return size1.width() == size2.width() && size1.height() == size2.height();
         }
 
-        bool operator != (const Size2D &s1, const Size2D &s2) {
-            return !(s1 == s2);
+        bool operator != (const Size2D &size1, const Size2D &size2) {
+            return !(size1 == size2);
         }
 
-        std::ostream & operator << (std::ostream & output, const Size2D &s) {
+        std::ostream & operator << (std::ostream & output, const Size2D &size) {
             output <<
                    "(" <<
-                   "width = " << s.width() << ", height = " << s.height() <<
+                   "width = " << size.width() << ", height = " << size.height() <<
                    ")";
             return output;
         }
