@@ -9,7 +9,7 @@ SET(CATCH_INSTALL_DOCS OFF CACHE BOOL "CATCH_INSTALL_DOCS")
 FetchContent_Declare(
         Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG        v2.13.1)
+        GIT_TAG        v2.13.3)
 FetchContent_MakeAvailable(Catch2)
 
 # Collect the c++ test files
@@ -33,7 +33,7 @@ add_executable(
         ${RPI4_STATUS_DISPLAY_TESTS_FILES})
 add_dependencies(
         rpi4_status_display_tests
-        rpi4_status_display_library)
+        rpi4_status_display_library Catch2)
 target_link_libraries(
         rpi4_status_display_tests
         rpi4_status_display_library Catch2::Catch2)

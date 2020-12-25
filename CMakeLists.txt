@@ -9,5 +9,5 @@ include(setup-build-opts.cmake)
 include(src/src.cmake)
 
 if (BUILD_TESTS)
-include(tests/tests.cmake)
+    include(tests/tests.cmake)
 endif()

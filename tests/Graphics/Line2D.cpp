@@ -19,12 +19,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cstdint>
 #include <iostream>
+#include <sstream>
 
 #include "Graphics/Point2D.h"
 #include "Graphics/Line2D.h"
 
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;

@@ -19,6 +19,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cstdint>
 #include <iostream>
 
 #include "Graphics/Color.h"
@@ -30,7 +31,7 @@
 #include "Graphics/Renderer/RendererInterface.h"
 #include "Graphics/Renderer/AbstractFramebufferRenderer.h"
 
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;
