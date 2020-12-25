@@ -3,6 +3,7 @@ project(RPI4_STATUS_DISPLAY LANGUAGES CXX VERSION 0.3)
 
 set(CMAKE_CXX_STANDARD 14)
 
+include(setup-compiler.cmake)
 include(setup-options.cmake)
 include(setup-build-opts.cmake)
 
