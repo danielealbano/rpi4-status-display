@@ -25,7 +25,7 @@
 
 #include "Graphics/Point2D.h"
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;

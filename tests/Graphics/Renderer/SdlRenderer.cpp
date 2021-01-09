@@ -34,7 +34,7 @@
 #include "Graphics/Renderer/AbstractFramebufferRenderer.h"
 #include "Graphics/Renderer/SdlRenderer.h"
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;

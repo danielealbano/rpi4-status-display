@@ -31,7 +31,7 @@
 #include "Graphics/Renderer/RendererInterface.h"
 #include "Graphics/Renderer/AbstractFramebufferRenderer.h"
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;

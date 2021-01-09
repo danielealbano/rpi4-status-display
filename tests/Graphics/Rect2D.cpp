@@ -27,7 +27,7 @@
 #include "Graphics/Size2D.h"
 #include "Graphics/Rect2D.h"
 
-#include "catch2/catch.hpp"
+#include <catch2/catch.hpp>
 
 using namespace std;
 using namespace Rpi4StatusDisplay::Graphics;
