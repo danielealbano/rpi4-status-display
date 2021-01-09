@@ -1,3 +1,6 @@
+[![Build & Test](https://github.com/danielealbano/rpi4-status-display/workflows/Build%20&%20Test/badge.svg)](https://github.com/danielealbano/rpi4-status-display/actions?query=branch%3Amaster+workflow%3A%22Build+%26+Test%22)
+[![Code Coverage](https://img.shields.io/codecov/c/gh/danielealbano/rpi4-status-display?label=code%20coverage)](https://codecov.io/gh/danielealbano/rpi4-status-display)
+
 # RPI4 Status Display
 
 A status display for the Raspberry PI 4 but it can actually work on any other board, there aren't strict requirements.
